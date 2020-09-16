@@ -1,0 +1,102 @@
+body {
+    font-family:"trebuchet ms",sans-serif;
+    font-size:100%;
+    background-color:#FAFAFA;
+}
+
+/*---------------------------------------------*/
+
+input {
+    display: flex;
+    font-style: italic;
+    font-size: 100%;
+    width:100px;
+    height:25px;
+    margin: 10px auto;
+    box-shadow:2px 2px 1px #59b5eb8f;
+    background-color:#FFF3F3;
+    border:1px solid #f39595;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/*---------------------------------------------*/
+
+.sec_1 .main .stat {
+    width:300px;
+    margin: 10px auto;
+}
+.sec_1 .main .stat .Border {
+    padding:5px 20px 5px 20px;
+    border:1px solid #DF3F3F;
+}
+
+.sec_1 .main .stat .Border .legend {
+    font-style: italic;
+    animation: wheelHueColor 60s infinite;
+    font-weight:bold;
+    margin-top: auto;
+}
+
+/*---------------------------------------------*/
+
+.sec_1 .enemy .list {
+    width:150px;
+    margin: 10px auto;
+}
+.sec_1 .enemy .list .Border {
+    padding:20px 20px 20px 20px;
+    border:1px solid #DF3F3F;
+}
+.sec_1 .enemy .list .Border .legend {
+    font-style: italic;
+    animation: wheelHueColor 60s infinite;
+    font-weight:bold;
+    margin-top: auto;
+}
+
+/*---------------------------------------------*/
+
+.sec_1 .skill .choice {
+    width:300px;
+    margin: 10px auto;
+}
+.sec_1 .skill .choice .Border {
+    padding:20px 20px 20px 20px;
+    border:1px solid #DF3F3F;
+}
+.sec_1 .skill .choice .Border .legend {
+    font-style: italic;
+    animation: wheelHueColor 60s infinite;
+    font-weight:bold;
+    margin-top: auto;
+}
+
+/*---------------------------------------------*/
+
+.sec_1 .deconnection {
+    display: flex;
+    font-style: italic;
+    font-size: 90%;
+    width:100px;
+    margin: 10px auto;
+    box-shadow:2px 2px 1px #59b5eb8f;
+    background-color:#FFF3F3;
+    border:1px solid #f39595;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/*---------------------------------------------*/
+@keyframes wheelHueColor {
+    from, to { color: hsl(324, 70%, 45%); }
+    10%      { color: hsl(360, 65%, 45%); }
+    20%      { color: hsl( 36, 80%, 45%); }
+    30%      { color: hsl( 72, 75%, 35%); }
+    40%      { color: hsl(108, 65%, 35%); }
+    50%      { color: hsl(144, 75%, 35%); }
+    60%      { color: hsl(180, 75%, 35%); }
+    70%      { color: hsl(216, 60%, 45%); }
+    80%      { color: hsl(252, 65%, 50%); }
+    90%      { color: hsl(288, 60%, 40%); }
+}

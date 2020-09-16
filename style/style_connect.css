@@ -1,0 +1,80 @@
+body {
+    font-family:"trebuchet ms",sans-serif;
+    font-size:100%;
+    background-color:#FAFAFA;
+    }
+   form {
+    padding:10px;
+    width:280px;
+    }
+    form[id=blanc] {
+        padding:10px;
+        width:280px;
+        height: 200px;
+        }
+   fieldset {
+    padding:0 20px 20px 20px;
+    margin-bottom:10px;
+    border:1px solid #DF3F3F;
+    }
+   legend {
+    color:#DF3F3F;
+    font-weight:bold;
+    margin-top: auto;
+    }
+   label {
+    margin-top:10px;
+    }
+   label.inline {
+    display:inline;
+    margin-right:50px;
+    }
+   input, textarea, select, option {
+    background-color:#FFF3F3;
+    }
+   input, textarea, select {
+    padding:3px;
+    border:1px solid #F5C5C5;
+    border-radius:5px;
+    width:200px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+    }
+   select {
+    margin-top:10px;
+    }
+   input[type=radio] {
+    background-color:transparent;
+    border:none;
+    width:10px;
+    }
+   input[type=submit], input[type=reset] {
+    font-size: 15px;
+    width:145px;
+    margin-left:5px;
+    box-shadow:1px 1px 1px #59b5eb8f;
+    cursor:pointer;
+    }
+
+    input[type=button]
+    {
+        font-size: 15px;
+        width:145px;
+        margin-left:5px;
+        box-shadow:1px 1px 1px #59b5eb8f;
+        cursor:pointer;
+    }
+
+    div{
+        margin-top: 12%;
+    }
+
+    form[id="top"]{
+        margin-top: 10%;
+    }
+
+    .choice {
+        margin-left: 1%
+    }
+    .choice_1{
+        margin-left: 5%
+    }
