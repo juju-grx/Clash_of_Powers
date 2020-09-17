@@ -33,7 +33,7 @@ Autoloader::register();
     header('Location: Index.php');
   }
 
-  if(isset($_SESSION)){
+  if(isset($_SESSION['nom'])){
     $main = $manager->getOne($_SESSION['nom']);
   }else{
     session_destroy();
@@ -111,6 +111,10 @@ Autoloader::register();
                         print('<input type="submit" name="ennemie" value="'. $perso->getNom() .'"<br>');
                       }
                     }
+                  }
+                  else
+                  {
+                    print("Aucun Ennemie n'a été détecté");
                   }
                 ?>
             </fieldset>
