@@ -17,7 +17,7 @@ class PersonnageManager{
         // Assignation des valeurs pour le nom, la force, les dégâts, l'expérience et le niveau du personnage.
         // Exécution de la requête.
         $request = $this->_db->prepare('INSERT INTO personnages SET nom = :nom, 
-                                        `force` = :force, pv = :pv, niveau = :niveau, experience = :experience, `type` = :type, atout = :atout, reveil = :reveil;');
+                                        `force` = :force, pv = :pv, niveau = :niveau, experience = :experience, `type` = :type;');
 
         $request->bindValue(':nom', $perso->getNom(), PDO::PARAM_STR);
         $request->bindValue(':force', $perso->getForce(), PDO::PARAM_INT);
@@ -25,8 +25,6 @@ class PersonnageManager{
         $request->bindValue(':niveau', $perso->getNiveau(), PDO::PARAM_INT);
         $request->bindValue(':experience', $perso->getExperience(), PDO::PARAM_INT);
         $request->bindValue(':type', $perso->getType(), PDO::PARAM_STR);
-        $request->bindValue(':atout', $perso->getAtout(), PDO::PARAM_INT);
-        $request->bindValue(':reveil', $perso->getReveil(), PDO::PARAM_INT);
 
         $request->execute();
         if ($request->errorCode() != '00000') {
@@ -44,7 +42,7 @@ class PersonnageManager{
     public function getOne(string $persoNom)
     {
         // Exécute une requête de type SELECT avec une clause WHERE, et retourne un objet Personnage.
-        $request = $this->_db->query("SELECT id, nom, `force`, pv, niveau, experience, `type`, atout, reveil FROM personnages WHERE nom = '". $persoNom ."';");
+        $request = $this->_db->query("SELECT id, nom, `force`, pv, niveau, experience, `type` FROM personnages WHERE nom = '". $persoNom ."';");
         $ligne = $request->fetch(PDO::FETCH_ASSOC);
 
         if($ligne['type'] == 'Guerrier') {
@@ -71,7 +69,7 @@ class PersonnageManager{
 
         $persos = array();
 
-        $request = $this->_db->query('SELECT id, nom, `force`, pv, niveau, experience, `type`, atout, reveil FROM personnages ORDER BY nom;');
+        $request = $this->_db->query('SELECT id, nom, `force`, pv, niveau, experience, `type` FROM personnages ORDER BY nom;');
         while ($ligne = $request->fetch(PDO::FETCH_ASSOC))
         {
             if(isset($ligne)){
@@ -94,15 +92,13 @@ class PersonnageManager{
         // Exécution de la requête.
 
         $request = $this->_db->prepare('UPDATE personnages SET `force` = :force, 
-                                        pv = :pv, niveau = :niveau, experience = :experience, `type` = :type, atout = :atout, reveil = :reveil WHERE id = :id;');
+                                        pv = :pv, niveau = :niveau, experience = :experience, `type` = :type WHERE id = :id;');
 
         $request->bindValue(':force', $perso->getForce(), PDO::PARAM_INT);
         $request->bindValue(':pv', $perso->getPv(), PDO::PARAM_INT);
         $request->bindValue(':niveau', $perso->getNiveau(), PDO::PARAM_INT);
         $request->bindValue(':experience', $perso->getExperience(), PDO::PARAM_INT);
         $request->bindValue(':type', $perso->getType(), PDO::PARAM_STR);
-        $request->bindValue(':atout', $perso->getAtout(), PDO::PARAM_INT);
-        $request->bindValue(':reveil', $perso->getReveil(), PDO::PARAM_INT);
         $request->bindValue(':id', $perso->getId(), PDO::PARAM_INT);
         $request->execute();
     }

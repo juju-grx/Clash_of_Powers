@@ -10,7 +10,6 @@ class Magicien extends Personnage
     const DEFAULT_SPD = 105;
     const DEFAULT_NIVEAU = 1;
     const DEFAULT_EXPERIENCE = 0;
-    const DEFAULT_ATOUT = 0;
     const DEFAULT_REVEIL = 0;
 
     public function __construct($ligne)
@@ -20,7 +19,6 @@ class Magicien extends Personnage
         $this->_spd = self::DEFAULT_SPD;
         $this->_niveau = self::DEFAULT_NIVEAU;
         $this->_experience = self::DEFAULT_EXPERIENCE;
-        $this->_atout = self::DEFAULT_ATOUT;
         $this->_reveil = self::DEFAULT_REVEIL;
         $this->_type = self::TYPE;
         
@@ -32,15 +30,5 @@ class Magicien extends Personnage
         print('<input type="submit" name="competance" value="speedShoot"<br>');
         print('<input type="submit" name="competance" value="multiShoot"<br>');
     }
-
-    public function competance(){
-        print('test');
-    }
-
-
-
-
-
-
 
 }

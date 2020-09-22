@@ -92,7 +92,6 @@ Autoloader::register();
                   <p><label>Point d'atk:  </label> <?php print($main->getForce());      ?></p>
                   <p><label>Niveau:       </label> <?php print($main->getNiveau());     ?></p>
                   <p><label>Expérience:   </label> <?php print($main->getExperience()); ?></p>
-                  <p><label>Compétence:   </label> <?php print($main->getAtout());      ?></p>
                   <p><?php print($message);  ?></p>
                 </div>
             </fieldset> 
@@ -131,9 +130,9 @@ Autoloader::register();
                     <legend><?php if(isset($_POST['ennemie'])){print($_POST['ennemie']);} ?></legend>
                   <?php
                     if(isset($ennemie)){
-                      print("<p><label>Type:         </label>".  print($ennemie->getType())   ."</p>
-                             <p><label>Point de vie: </label>".  print($ennemie->getPv())     ."</p>
-                             <p><label>Niveau:       </label>".  print($ennemie->getNiveau()) ."</p>");
+                      print("<p>Type:         ".  $ennemie->getType()   ."</p>");
+                      print("<p>Point de vie: ".  $ennemie->getPv()     ."</p>");
+                      print("<p>Niveau:       ".  $ennemie->getNiveau() ."</p>");
                     }else{
                       print("Veuillez choisir un ennemi à frapper");
                     }
