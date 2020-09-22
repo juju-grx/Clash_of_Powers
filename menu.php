@@ -127,7 +127,7 @@ Autoloader::register();
               <legend class="legend">Que faire ?</legend>
                 <div class="choiceEnemy">
                   <fieldset>
-                    <legend><?php if(isset($_POST['ennemie'])){print($_POST['ennemie']);} ?></legend>
+                    <legend><?php if(isset($_POST['ennemie'])){print("Cible: " . $_POST['ennemie']);} ?></legend>
                   <?php
                     if(isset($ennemie)){
                       print("<p>Type:         ".  $ennemie->getType()   ."</p>");
@@ -138,9 +138,11 @@ Autoloader::register();
                     }
                   ?></fieldset>
                 </div>
-                <div>
+                <div id="competance">
                   <?php
+                  if(isset($ennemie)){
                     $main->afficherCompetance();
+                  }
                   ?>
                 </div>
             </fieldset>

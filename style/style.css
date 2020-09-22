@@ -72,6 +72,20 @@ input {
     margin-top: auto;
 }
 
+input #competance{
+    display: flex;
+    font-style: italic;
+    font-size: 100%;
+    width:150px;
+    height:25px;
+    margin: 10px auto;
+    box-shadow:2px 2px 1px #59b5eb8f;
+    background-color:#FFF3F3;
+    border:1px solid #f39595;
+    border-radius:5px;
+    cursor:pointer;
+}
+
 /*---------------------------------------------*/
 
 .sec_1 .deconnection {

@@ -26,8 +26,8 @@ class Guerrier extends Personnage
     }
 
     public function afficherCompetance(){
-        print('<input type="submit" name="competance" value="speedShoot"<br>');
-        print('<input type="submit" name="competance" value="multiShoot"<br>');
+        print('<input type="submit" name="competance" value="Sword strike" id="skinCompetance"<br>');
+        print('<input type="submit" name="competance" value="Coup de bouclier" id="skinCompetance"<br>');
     }
 
     public function competance(){
