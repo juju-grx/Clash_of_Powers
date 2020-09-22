@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 17 sep. 2020 à 06:36
+-- Généré le : mar. 22 sep. 2020 à 12:37
 -- Version du serveur :  10.5.5-MariaDB
 -- Version de PHP : 7.4.9
 
@@ -35,18 +35,17 @@ CREATE TABLE IF NOT EXISTS `personnages` (
   `niveau` int(11) NOT NULL,
   `experience` int(11) NOT NULL,
   `type` varchar(50) COLLATE utf8_bin NOT NULL,
-  `atout` int(11) NOT NULL,
-  `reveil` int(11) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `personnages`
 --
 
-INSERT INTO `personnages` (`nom`, `force`, `pv`, `niveau`, `experience`, `type`, `atout`, `reveil`, `id`) VALUES
-('juju', 1675, 21250, 1, 0, 'Magicien', 0, 0, 1);
+INSERT INTO `personnages` (`nom`, `force`, `pv`, `niveau`, `experience`, `type`, `id`) VALUES
+('juju', 1675, 21250, 1, 0, 'Magicien', 1),
+('test', 1675, 21250, 1, 0, 'Guerrier', 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
