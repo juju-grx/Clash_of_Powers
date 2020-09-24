@@ -21,16 +21,6 @@ abstract class Personnage
         get_class($this);
     }
 
-    public function test(){
-        print('<input type="submit" name="ennemie" value="'. $this->getNom() .'"<br>');
-    }
-
-    public function damage($_ennemie)
-    {
-        $_ennemie->_pv -= $this->_force;
-        return $_ennemie;
-    }
-
     public function upExperience()
     {
         $this->_experience += 50;
@@ -54,10 +44,10 @@ abstract class Personnage
 
     public function health($ennemie)
     {
-        $ennemiePv = $ennemie->getNiveau();
-        if($ennemiePv > 5 && $ennemiePv < 10){
+        $ennemieNiv = $ennemie->getNiveau();
+        if($ennemieNiv > 5 && $ennemieNiv < 10){
             $this->_pv += 50;
-        }elseif($ennemiePv > 10){
+        }elseif($ennemieNiv > 10){
             $this->_pv += 100;
         }
     }
@@ -119,13 +109,14 @@ abstract class Personnage
 
     public function setForce($_force)
     {
-            $this->_force = $_force;
+        $force = (int) $_force;
+        $this->_force = $force;
     }
 
     public function setPv($_pv)
     {
         $pv = (int) $_pv;
-        $this->_pv = $_pv;
+        $this->_pv = $pv;
     }
 
     public function setNiveau($_niveau)

@@ -25,24 +25,25 @@ class Archer extends Personnage
     }
 
     public function afficherCompetence(){
-        print('<input type="submit" name="competence[]" value="speedShoot" id="skinCompetence"<br>');
+        print('<input type="submit" name="competence" value="speedShoot" id="skinCompetence"<br>');
         if($this->getNiveau() >= 5){
             print('<input type="submit" name="competence" value="multiShoot" id="skinCompetence"<br>');}
         if($this->getNiveau() >= 10){
             print('<input type="submit" name="competence" value="Roulade" id="skinCompetence"<br>');
             print('<input type="submit" name="competence" value="Tir de précision" id="skinCompetence"<br>');}
     }
-    public function competance(){
-        print('test');
-    }
 
     public function passif(){
 
     }
 
-    public function speedShoot($_ennemie)
+    public function speedShoot($_ennemieDamage)
     {
-        $_ennemie->hp -= $this->_force;
+        $ennemieDamage = unserialize($_ennemieDamage);
+        $newPv = $ennemieDamage->getPv() - $this->_force;
+        $ennemieDamage->setPv($newPv);
+        var_dump($ennemieDamage);
+        $_SESSION['ennemie'] = $ennemieDamage;
     }
 
     public function multiShoot($_ennemie)

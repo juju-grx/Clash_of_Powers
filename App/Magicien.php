@@ -5,9 +5,9 @@ namespace App;
 class Magicien extends Personnage
 {
     const TYPE = "Magicien";
-    const DEFAULT_PV = 21250;
-    const DEFAULT_FORCE = 1675;
-    const DEFAULT_SPD = 105;
+    const DEFAULT_PV = 22500;
+    const DEFAULT_FORCE = 1595;
+    const DEFAULT_SPD = 102;
     const DEFAULT_NIVEAU = 1;
     const DEFAULT_EXPERIENCE = 0;
 

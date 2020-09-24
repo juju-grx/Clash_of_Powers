@@ -4,9 +4,9 @@ namespace App;
 class Guerrier extends Personnage
 {
     const TYPE = "Guerrier";
-    const DEFAULT_PV = 21250;
-    const DEFAULT_FORCE = 1675;
-    const DEFAULT_SPD = 105;
+    const DEFAULT_PV = 30000;
+    const DEFAULT_FORCE = 1150;
+    const DEFAULT_SPD = 98;
     const DEFAULT_NIVEAU = 1;
     const DEFAULT_EXPERIENCE = 0;
 
