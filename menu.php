@@ -39,32 +39,16 @@ Autoloader::register();
     session_destroy();
     header('Location: Index.php');
   }
-  if(isset($_POST['nom'])){
-    $nomAtk['nom'] = $_POST['nom'];
-    $atk = $manager->getOne($nomAtk['nom']);
-    if($atk != null){
-    $main->damage($atk);
-    if($atk->getPv()< 1){
-      $main->health($atk);
-      $manager->delete($atk);
-      $message = ('Vous avez tuer '. $_POST['nom'] .' !!! <br/> Vous gagner 50 points d\'Experience');
-      $main->upExperience();
-      $manager->update($main);
-      
-    }else{
-      $manager->update($atk);
-      $message = ('Vous avez infliger '. $main->getForce() .' point <br/> de dégats à '. $_POST['nom']);
-    }}
-  }
-
+  
   if(isset($_POST['deconnection'])){
     session_destroy();
     header('Location: Index.php');
   }
-
   if(isset($_POST['ennemie'])){
-    $nomAtk['ennemie'] = $_POST['ennemie'];
-    $ennemie = $manager->getOne($nomAtk['ennemie']);
+    $ennemie = $_POST['ennemie'];
+    $ennemie = $manager->getOne($_POST['ennemie']);
+    $manager->update($ennemie);
+    $_SESSION['ennemie'] = $ennemie;
   }
 
   ?>
@@ -129,10 +113,10 @@ Autoloader::register();
                   <fieldset>
                     <legend><?php if(isset($_POST['ennemie'])){print("Cible: " . $_POST['ennemie']);} ?></legend>
                   <?php
-                    if(isset($ennemie)){
-                      print("<p>Type:         ".  $ennemie->getType()   ."</p>");
-                      print("<p>Point de vie: ".  $ennemie->getPv()     ."</p>");
-                      print("<p>Niveau:       ".  $ennemie->getNiveau() ."</p>");
+                    if(isset($_SESSION['ennemie'])){
+                      print("<p>Type:         ".  $_SESSION['ennemie']->getType()   ."</p>");
+                      print("<p>Point de vie: ".  $_SESSION['ennemie']->getPv()     ."</p>");
+                      print("<p>Niveau:       ".  $_SESSION['ennemie']->getNiveau() ."</p>");
                     }else{
                       print("Veuillez choisir un ennemi à frapper");
                     }
@@ -141,7 +125,9 @@ Autoloader::register();
                 <div id="competance">
                   <?php
                   if(isset($ennemie)){
-                    $main->afficherCompetance();
+                    $main->afficherCompetence();
+                    $test = "multiShoot";
+                    $main->$test($ennemie);
                   }
                   ?>
                 </div>

@@ -9,8 +9,6 @@ abstract class Personnage
     protected $_niveau;
     protected $_experience;
     protected $_type;
-    protected $_atout;
-    protected $_reveil;
     protected $_id;
     protected $_spd;
 
@@ -101,16 +99,6 @@ abstract class Personnage
         return $this->_type;
     }
 
-    public function getAtout()
-    {
-        return $this->_atout;
-    }
-
-    public function getReveil()
-    {
-        return $this->_reveil;
-    }
-
     //mutateur------------------------------------
 
     public function setId($_id)
@@ -153,16 +141,6 @@ abstract class Personnage
     public function setType($_type)
     {
         $this->_type = $_type;
-    }
-
-    public function setAtout($_atout)
-    {
-        $this->_atout = $_atout;
-    }
-
-    public function setReveil($_reveil)
-    {
-        $this->_reveil = $_reveil;
     }
 
     //hydrate--------------------------------------------
