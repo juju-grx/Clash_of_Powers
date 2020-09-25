@@ -48,12 +48,7 @@ Autoloader::register();
     $ennemie = $_POST['ennemie'];
     $ennemie = $manager->getOne($_POST['ennemie']);
     $manager->update($ennemie);
-    $_SESSION['ennemie'] = serialize($ennemie);
-  }
-  if(isset($_SESSION['ennemie'])){var_dump($_SESSION['ennemie']);}
-  if(isset($_SESSION['ennemie']))
-  {
-    $_SESSION['ennemie'] = serialize($_SESSION['ennemie']);
+    $_SESSION['ennemie'] =$ennemie;
   }
   ?>
 
@@ -116,18 +111,17 @@ Autoloader::register();
                 <div class="choiceEnemy">
                   <fieldset>
                     <legend><?php if(isset($_SESSION['ennemie'])){
+                                    $ennemie = $_SESSION['ennemie'];
                                     var_dump($_SESSION['ennemie']);
-                                    $ennemie = unserialize(unserialize($_SESSION['ennemie']));
-                                    var_dump($ennemie);
                                     print("Cible: " . $ennemie->getNom());
                                   } 
                             ?>
                     </legend>
                   <?php
                     if(isset($_SESSION['ennemie'])){
-                      print("<p>Type:         ".  unserialize($_SESSION['ennemie'])->getType()   ."</p>");
-                      print("<p>Point de vie: ".  unserialize($_SESSION['ennemie'])->getPv()     ."</p>");
-                      print("<p>Niveau:       ".  unserialize($_SESSION['ennemie'])->getNiveau() ."</p>");
+                      print("<p>Type:         ".  $_SESSION['ennemie']->getType()   ."</p>");
+                      print("<p>Point de vie: ".  $_SESSION['ennemie']->getPv()     ."</p>");
+                      print("<p>Niveau:       ".  $_SESSION['ennemie']->getNiveau() ."</p>");
                     }else{
                       print("Veuillez choisir un ennemi à frapper");
                     }
@@ -137,7 +131,9 @@ Autoloader::register();
                   <?php
                   if(isset($_SESSION['ennemie'])){
                     $main->afficherCompetence();
+                    var_dump($_SESSION['ennemie']);
                     if(isset($_POST['competence'])){
+                      print("test");
                       $competence = $_POST['competence'];
                       $main->$competence($_SESSION['ennemie']);
                     }

@@ -37,13 +37,10 @@ class Archer extends Personnage
 
     }
 
-    public function speedShoot($_ennemieDamage)
+    public function speedShoot($ennemieDamage)
     {
-        $ennemieDamage = unserialize($_ennemieDamage);
         $newPv = $ennemieDamage->getPv() - $this->_force;
         $ennemieDamage->setPv($newPv);
-        var_dump($ennemieDamage);
-        $_SESSION['ennemie'] = $ennemieDamage;
     }
 
     public function multiShoot($_ennemie)
