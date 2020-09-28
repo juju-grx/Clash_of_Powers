@@ -37,35 +37,39 @@ class Archer extends Personnage
 
     }
 
-    public function speedShoot($ennemieDamage)
+    public function speedShoot($ennemie)
     {
-        $newPv = $ennemieDamage->getPv() - $this->_force;
-        $ennemieDamage->setPv($newPv);
+        $_ennemie = unserialize($ennemie);
+        $newPv = $_ennemie->getPv() - $this->_force;
+        $_ennemie->setPv($newPv);
+        $_SESSION['ennemie'] = serialize($_ennemie);
     }
 
     public function multiShoot($_ennemie)
     {
+        $_ennemie = unserialize($ennemie);
+
         $pourcent = rand(0, 100);
 
         if($pourcent <= 100 && $pourcent >= 45){
             $atk = (($this->_force)-(($this->_force)*0.8))*2;
             $_ennemie->setPv($_ennemie->getPv());
-            print(2);
+            $_SESSION['ennemie'] = serialize($_ennemie);
         }
         elseif($pourcent < 45 && $pourcent >= 20){
             $atk = (($this->_force)-(($this->_force)*0.7))*3;
             $_ennemie->setPv($atk);
-            print(3);
+            $_SESSION['ennemie'] = serialize($_ennemie);
         }
         elseif($pourcent < 20 && $pourcent >= 5 ){
             $atk = (($this->_force)-(($this->_force)*0.6))*4;
             $_ennemie->setPv($atk);
-            print(4);
+            $_SESSION['ennemie'] = serialize($_ennemie);
         }
         elseif($pourcent < 5  && $pourcent >= 0 ){
             $atk = (($this->_force)-(($this->_force)*0.5))*5;
             $_ennemie->setPv($atk);
-            print(5);
+            $_SESSION['ennemie'] = serialize($_ennemie);
         }
 
     }
