@@ -53,7 +53,15 @@ Autoloader::register();
 
   if(isset($_SESSION['ennemie'])){
     $ennemie = unserialize($_SESSION['ennemie']);
-    $manager->update($ennemie);
+    if($ennemie->getPv() <= 0)
+    {
+      $main->upExperience();
+      $manager->delete($ennemie);
+      $manager->update($main);
+    }
+    else{
+      $manager->update($ennemie);
+    }
   }
   ?>
 

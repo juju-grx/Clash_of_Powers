@@ -12,10 +12,6 @@ abstract class Personnage
     protected $_id;
     protected $_spd;
 
-    const FORCE_PETITE = 10;
-    const FORCE_MOYENNE = 20;
-    const FORCE_GRANDE = 30;
-
     public function __construct()
     {
         get_class($this);
@@ -34,12 +30,6 @@ abstract class Personnage
     public function upNiveau()
     {
         $this->_niveau += 1;
-        $verif = $this->_niveau;
-        if($verif == 5){
-            $this->setForce(20);
-        }elseif($verif == 10){
-            $this->setForce(30);
-        }
     }
 
     public function health($ennemie)
