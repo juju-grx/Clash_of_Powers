@@ -12,7 +12,6 @@ class PersonnageManager{
 
     public function add(Personnage $perso)
     {
-        var_dump($perso);
         // Préparation de la requête d'insertion.
         // Assignation des valeurs pour le nom, la force, les dégâts, l'expérience et le niveau du personnage.
         // Exécution de la requête.
@@ -90,7 +89,6 @@ class PersonnageManager{
         // Prépare une requête de type UPDATE.
         // Assignation des valeurs à la requête.
         // Exécution de la requête.
-
         $request = $this->_db->prepare('UPDATE personnages SET `force` = :force, 
                                         pv = :pv, niveau = :niveau, experience = :experience, `type` = :type WHERE id = :id;');
 
