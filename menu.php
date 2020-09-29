@@ -55,7 +55,6 @@ Autoloader::register();
     $ennemie = unserialize($_SESSION['ennemie']);
     $nameEnnemie = $ennemie->getNom();
     $ennemie = $manager->getOne($nameEnnemie);
-    var_dump($ennemie);
     $manager->update($ennemie);
   }
   ?>

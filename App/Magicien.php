@@ -1,7 +1,6 @@
 <?php
 namespace App;
 
-
 class Magicien extends Personnage
 {
     const TYPE = "Magicien";
@@ -24,9 +23,10 @@ class Magicien extends Personnage
         $this->hydrate($ligne);
     }
 
-    public function afficherCompetance(){
-        print('<input type="submit" name="competance" value="speedShoot"<br>');
-        print('<input type="submit" name="competance" value="multiShoot"<br>');
+    public function afficherCompetence(){
+        print('<input type="submit" name="competence" value="Energie spikes"<br>');
+        if($this->getNiveau() >= 5){
+        print('<input type="submit" name="competence" value="feu-follet"    <br>');}
     }
 
 }

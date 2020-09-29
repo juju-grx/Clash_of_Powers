@@ -23,19 +23,10 @@ class Guerrier extends Personnage
         $this->hydrate($ligne);
     }
 
-    public function afficherCompetance(){
-        print('<input type="submit" name="competance" value="Sword strike" id="skinCompetance"<br>');
-        print('<input type="submit" name="competance" value="Coup de bouclier" id="skinCompetance"<br>');
+    public function afficherCompetence(){
+        print('<input type="submit" name="competence" value="Sword strike" <br>');
+        if($this->getNiveau() >= 5){
+        print('<input type="submit" name="competence" value="shield shot"  <br>');}
     }
-
-    public function competance(){
-        print('test');
-    }
-
-
-
-
-
-
 
 }
