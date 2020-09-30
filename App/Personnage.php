@@ -19,7 +19,7 @@ abstract class Personnage
 
     public function upExperience()
     {
-        $this->_experience += (100 - $this->getNiveau());
+        $this->_experience += (100 * (1-(1/$this->getNiveau())));
         $verif = $this->_experience;
         if($verif >= 100){
             $this->upNiveau();

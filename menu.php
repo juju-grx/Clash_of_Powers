@@ -23,10 +23,8 @@ Autoloader::register();
   catch (PDOException $e){
     print('<br/>Erreur de connexion : ' . $e->getMessage());
   }
- 
   $manager = new PersonnageManager($db);
 
-  
   $allperso = $manager->getlist();
   $verif = count($allperso);
 
@@ -126,23 +124,27 @@ Autoloader::register();
             <fieldset class="Border">
               <legend class="legend">Que faire ?</legend>
                 <div class="choiceEnemy">
-                  <fieldset>
-                    <legend><?php if(isset($_SESSION['ennemie'])){
-                                    $ennemie = unserialize($_SESSION['ennemie']);
-                                    print("Cible: " . $ennemie->getNom());
-                                  } 
+                  <?php if(isset($_SESSION['ennemie'])){ ?>
+                          <fieldset>
+                            <legend>
+                              <?php 
+                                $ennemie = unserialize($_SESSION['ennemie']);
+                                print("Cible: " . $ennemie->getNom());
+                              ?>
+                            </legend>
+                            <?php
+                              $ennemie = unserialize($_SESSION['ennemie']);
+                              print("<p>Type:         ".  $ennemie->getType()   ."</p>");
+                              print("<p>Point de vie: ".  $ennemie->getPv()     ."</p>");
+                              print("<p>Niveau:       ".  $ennemie->getNiveau() ."</p>");
                             ?>
-                    </legend>
-                  <?php
-                    if(isset($_SESSION['ennemie'])){
-                      $ennemie = unserialize($_SESSION['ennemie']);
-                      print("<p>Type:         ".  $ennemie->getType()   ."</p>");
-                      print("<p>Point de vie: ".  $ennemie->getPv()     ."</p>");
-                      print("<p>Niveau:       ".  $ennemie->getNiveau() ."</p>");
-                    }else{
-                      print("Veuillez choisir un ennemi à frapper");
+                          </fieldset>
+                  <?php 
                     }
-                  ?></fieldset>
+                    else{
+                      print("Veuillez choisir un ennemi à frapper");
+                    } 
+                  ?>
                 </div>
                 <div id="competance">
                   <?php
