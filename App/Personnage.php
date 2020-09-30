@@ -19,7 +19,7 @@ abstract class Personnage
 
     public function upExperience()
     {
-        $this->_experience += 50;
+        $this->_experience += (100 - $this->getNiveau());
         $verif = $this->_experience;
         if($verif >= 100){
             $this->upNiveau();
@@ -30,16 +30,6 @@ abstract class Personnage
     public function upNiveau()
     {
         $this->_niveau += 1;
-    }
-
-    public function health($ennemie)
-    {
-        $ennemieNiv = $ennemie->getNiveau();
-        if($ennemieNiv > 5 && $ennemieNiv < 10){
-            $this->_pv += 50;
-        }elseif($ennemieNiv > 10){
-            $this->_pv += 100;
-        }
     }
 
     //accesseur----------------------------------
