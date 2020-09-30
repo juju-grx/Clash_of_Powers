@@ -25,8 +25,6 @@ Autoloader::register();
   }
  
   $manager = new PersonnageManager($db);
-    $allperso = $manager->getlist();
-    $verif = count($allperso);
 
   if($verif == 0){
     session_destroy();
@@ -56,6 +54,7 @@ Autoloader::register();
     if($ennemie->getPv() <= 0)
     {
       $main->upExperience();
+      $_SESSION['ennemie'] = null;
       $manager->delete($ennemie);
       $manager->update($main);
     }
@@ -100,6 +99,8 @@ Autoloader::register();
             <fieldset class="Border">
             <legend class="legend">Qui frapper</legend>
                 <?php 
+                  $allperso = $manager->getlist();
+                  $verif = count($allperso);
                   if($verif>=1){
                     foreach ($allperso as $perso) {
                       if(strtoupper($perso->getNom()) != strtoupper($_SESSION['nom'])){
