@@ -7,6 +7,7 @@ class Magicien extends Personnage
     const DEFAULT_PV = 22500;
     const DEFAULT_FORCE = 1595;
     const DEFAULT_SPD = 102;
+    const DEFAULT_DEF = 17.5;
     const DEFAULT_NIVEAU = 1;
     const DEFAULT_EXPERIENCE = 0;
 
@@ -15,6 +16,7 @@ class Magicien extends Personnage
         $this->_pv = self::DEFAULT_PV;
         $this->_force = self::DEFAULT_FORCE;
         $this->_spd = self::DEFAULT_SPD;
+        $this->_def = self::DEFAULT_DEF;
         $this->_niveau = self::DEFAULT_NIVEAU;
         $this->_experience = self::DEFAULT_EXPERIENCE;
         $this->_type = self::TYPE;

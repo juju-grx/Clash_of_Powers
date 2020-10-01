@@ -8,6 +8,7 @@ class Archer extends Personnage
     const DEFAULT_PV = 21250;
     const DEFAULT_FORCE = 1675;
     const DEFAULT_SPD = 105;
+    const DEFAULT_DEF = 10;
     const DEFAULT_NIVEAU = 1;
     const DEFAULT_EXPERIENCE = 0;
 
@@ -16,6 +17,7 @@ class Archer extends Personnage
         $this->_pv = self::DEFAULT_PV;
         $this->_force = self::DEFAULT_FORCE;
         $this->_spd = self::DEFAULT_SPD;
+        $this->_def = self::DEFAULT_DEF;
         $this->_niveau = self::DEFAULT_NIVEAU;
         $this->_experience = self::DEFAULT_EXPERIENCE;
         $this->_type = self::TYPE;
@@ -24,13 +26,16 @@ class Archer extends Personnage
         $this->hydrate($ligne);
     }
 
-    public function afficherCompetence(){
+    public function afficherCompetence()
+    {
         print('<input type="submit" name="competence" value="speedShoot"           <br>');
         if($this->getNiveau() >= 5){
             print('<input type="submit" name="competence" value="multiShoot"       <br>');}
+            /*
         if($this->getNiveau() >= 10){
-            print('<input type="submit" name="competence" value="Roulade"          <br>');
-            print('<input type="submit" name="competence" value="Tir de précision" <br>');}
+            print('<input type="submit" name="competence" value="roulade"          <br>');
+            print('<input type="submit" name="competence" value="tireDePrécision" <br>');}
+            */
     }
 
     public function passif(){
@@ -72,7 +77,7 @@ class Archer extends Personnage
         }
     }
 
-    public function Roulade($_ennemie)
+    public function roulade($_ennemie)
     {
         
     }

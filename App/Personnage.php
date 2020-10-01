@@ -6,11 +6,12 @@ abstract class Personnage
     protected $_nom;
     protected $_force;
     protected $_pv;
+    protected $_spd;
+    protected $_def;
     protected $_niveau;
     protected $_experience;
     protected $_type;
     protected $_id;
-    protected $_spd;
 
     public function __construct()
     {
@@ -52,6 +53,16 @@ abstract class Personnage
     public function getPv()
     {
         return $this->_pv;
+    }
+
+    public function getSpd()
+    {
+        return $this->_spd;
+    }
+
+    public function getDef()
+    {
+        return $this->_def;
     }
 
     public function getNiveau()
@@ -97,6 +108,18 @@ abstract class Personnage
     {
         $pv = (int) $_pv;
         $this->_pv = $pv;
+    }
+
+    public function setSpd($_spd)
+    { 
+        $spd = (int) $_spd;
+        $this->_spd = $spd;
+    }
+
+    public function setDef($_def)
+    {   
+        $def = (int) $_def;
+        $this->_def = $def;
     }
 
     public function setNiveau($_niveau)

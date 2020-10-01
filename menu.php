@@ -2,8 +2,6 @@
 namespace App;
 session_start();
 
-use App\Magicien;
-use App\Guerrier;
 use App\Autoloader;
 use PDO;
 
