@@ -9,7 +9,7 @@ Autoloader::register();
 
 $dsn = 'mysql:dbname=battlegame;host=127.0.0.1';
 $user = 'root';
-$password = 'root';
+$password = '';
     $db = new PDO($dsn, $user, $password); 
     $erreur ='';
     if(isset($_POST['utiliser'])){
